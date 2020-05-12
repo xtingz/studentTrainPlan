@@ -6,7 +6,12 @@ def query(sql):
     功能; 使用sql语句查询数据库中学生选课信息.
     参数: sql(string)
     """
-    db = pymysql.connect(config['MYSQL_PATH'], config['MYSQL_USERNAME'], config['MYSQL_PASSWORD'], config['DATABASE_NAME'], charset='utf8')
+    db = pymysql.connect(host=config['MYSQL_HOST'],
+                         user=config['MYSQL_USERNAME'],
+                         port=config['MYSQL_PORT'],
+                         password=config['MYSQL_PASSWORD'],
+                         db=config['DATABASE_NAME'],
+                         charset='utf8')
     cur = db.cursor()
     try:
         cur.execute(sql)

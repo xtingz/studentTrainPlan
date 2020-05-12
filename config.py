@@ -1,6 +1,5 @@
 import os
 
-
 class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'gsolvit'
 
@@ -10,8 +9,9 @@ class Config:
 
 config = {
     'default': Config,
-    'MYSQL_PATH': 'localhost',
-    'MYSQL_USERNAME': 'test',
-    'MYSQL_PASSWORD': 'test',
-    'DATABASE_NAME': 'studentTrainPlan'
+    'MYSQL_HOST': 'localhost',
+    'MYSQL_PORT': 8889,
+    'MYSQL_USERNAME': 'scm',
+    'MYSQL_PASSWORD': 'scm',
+    'DATABASE_NAME': 'studentCourseManagement'
 }
