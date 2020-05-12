@@ -3,13 +3,17 @@ from utils import query, map_student_course, recommed_module
 import json
 import time
 import os
+
 # 创建flask对象
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'gsolvit'
 
 
+#   Flask中的route()装饰器用于将URL绑定到函数
+#   URL '/ index' 规则绑定到index()函数。 因此，用户访问http：//localhost：5000 / hello URL，index()函数的输出将在浏览器中呈现。
 @app.route('/index', methods=['GET', 'POST'])
 def index():
+    # 通过render_template()函数呈现HTML文件
     return render_template('index.html')
 
 
@@ -20,6 +24,8 @@ def manager():
     return render_template('manager.html', result=result)
 
 
+#   管理员添加用户
+#   url_for()函数对于动态构建特定函数的URL非常有用。使用url_for()将应用程序重定向到 manager()函数
 @app.route('/managerAdd', methods=['GET', 'POST'])
 def managerAdd():
     stu_id = session.get('stu_id')
@@ -30,6 +36,7 @@ def managerAdd():
             return  render_template('managerAdd.html')
         else:
             #print('222')
+            # 服务器通过POST方法接收数据,从表单form数据获取参数值
             name = request.form.get('name')
             sex = request.form.get('sex')
             stu_no = request.form.get('stu_no')
@@ -40,11 +47,13 @@ def managerAdd():
             sql="INSERT INTO STUDENT VALUES ('%s','%s','%s','%s','%s','%s','%s','%s')" % (name,sex,stu_no,college,major,ad_year,password,stu_no)
             #print(sql)
             query.update(sql)
+            # 将用户重定向到具有指定状态代码的另一个目标位置
             return redirect(url_for('manager'))
     else:
         return u'页面不存在'
 
 
+#   管理员删除用户
 @app.route('/managerDelete', methods=['GET', 'POST'])
 def managerDelete():
     stu_id = session.get('stu_id')
@@ -64,6 +73,7 @@ def managerDelete():
         return u'页面不存在'
 
 
+#   管理员编辑用户
 @app.route('/managerEdit', methods=['GET', 'POST'])
 def managerEdit():
     stu_id = session.get('stu_id')
@@ -100,6 +110,7 @@ def managerEdit():
         return u'页面不存在'
 
 
+#   课程评论
 @app.route('/course_discussion', methods=['GET', 'POST'])
 def course_discussion():
     if request.method == 'GET':
@@ -125,6 +136,7 @@ def course_discussion():
         return redirect(url_for('news_center'))
 
 
+#   登录
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -150,7 +162,7 @@ def login():
         else:
             return u'不存在这个用户'
 
-
+#   注册
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method=='GET':
@@ -227,6 +239,8 @@ def detail(question):
 def recommed():
     return render_template('recommed.html')
 
+
+
 @app.route("/getRecommedData", methods=['GET','POST'])
 def getRecommedData():
     stu_no = session.get('stu_id')
@@ -264,6 +278,8 @@ def getRecommedData():
     coursePersonJson['person'] = personJson
     return jsonify(coursePersonJson)
 
+
+#   个人中心
 @app.route('/personal_information', methods=['GET', 'POST'])
 def personal_information():
     """
@@ -295,9 +311,9 @@ def get_info():
 
 
 @app.route('/submit_train_plan', methods=['GET', 'POST'])
-def submit_train_place():
+def submit_train_p实现lace():
     """
-    功能1：实现数据库学生选课信息的更新
+    功能1：数据库学生选课信息的更新
     功能2: 实现计划树以及进度条的提交更新。
     :return:
     """
