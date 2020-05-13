@@ -2,9 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d52729f6-c0ec-4ea1-a020-1e9f52cfa856" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/sql/insert_education_plan_before.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/style1.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style1.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/course_discussion.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/course_discussion.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/news_center.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/news_center.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/personal_information.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/personal_information.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/query.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/query.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/学生培养计划管理系统说明书.pdf" beforeDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,101 +23,25 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/studentTrainPlan$studentTrainPlan.coverage" NAME="studentTrainPlan Coverage Results" MODIFIED="1558023454928" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
-  <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="627">
-              <caret line="33" selection-start-line="33" selection-end-line="34" />
-              <folding>
-                <element signature="e#0#94#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/errors.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#33#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-114" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/utils/recommed_module.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="36" column="7" selection-start-line="36" selection-start-column="7" selection-end-line="36" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="1994" />
-    <option name="y" value="145" />
-    <option name="width" value="1152" />
-    <option name="height" value="619" />
-  </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="studentTrainPlan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="studentTrainPlan" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="studentTrainPlan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="studentTrainPlan" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+  <component name="ProjectId" id="1boMaGVszyjkWzqqstvRFLTlCMI" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558024976573" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
   </component>
   <component name="RunManager">
     <configuration name="studentTrainPlan" type="PythonConfigurationType" factoryName="Python">
@@ -117,9 +51,9 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="D:\Programming_software\Python36\python.exe" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
@@ -150,77 +84,66 @@
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="1878000" />
   </component>
-  <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1296" height="1000" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info id="Designer" />
-      <window_info id="Image Layers" />
-      <window_info id="UI Designer" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info id="Capture Tool" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Tool Output" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="ANTLR Preview" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3290993" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Maven" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="SciView" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/utils/recommed_module.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="36" column="7" selection-start-line="36" selection-start-column="7" selection-end-line="36" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/errors.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-114" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="627">
-          <caret line="33" selection-start-line="33" selection-end-line="34" />
-          <folding>
-            <element signature="e#0#94#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+  <component name="WindowStateProjectService">
+    <state x="304" y="188" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589304747197">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="304" y="188" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1589304747197" />
+    <state x="627" y="289" key="FileChooserDialogImpl" timestamp="1589299743333">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="627" y="289" key="FileChooserDialogImpl/0.0.1680.1050@0.0.1680.1050" timestamp="1589299743333" />
+    <state width="1659" height="363" key="GridCell.Tab.0.bottom" timestamp="1589355627074">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1659" height="363" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1589355627074" />
+    <state width="1659" height="363" key="GridCell.Tab.0.center" timestamp="1589355627073">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1659" height="363" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1589355627073" />
+    <state width="1659" height="363" key="GridCell.Tab.0.left" timestamp="1589355627072">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1659" height="363" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1589355627072" />
+    <state width="1659" height="363" key="GridCell.Tab.0.right" timestamp="1589355627073">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1659" height="363" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1589355627073" />
+    <state width="1659" height="363" key="GridCell.Tab.1.bottom" timestamp="1589355626960">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1659" height="363" key="GridCell.Tab.1.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1589355626960" />
+    <state width="1659" height="363" key="GridCell.Tab.1.bottom/0.23.1680.972@0.23.1680.972" timestamp="1589304786943" />
+    <state width="1659" height="363" key="GridCell.Tab.1.center" timestamp="1589355626959">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1659" height="363" key="GridCell.Tab.1.center/0.0.1680.1050@0.0.1680.1050" timestamp="1589355626959" />
+    <state width="1659" height="363" key="GridCell.Tab.1.center/0.23.1680.972@0.23.1680.972" timestamp="1589304786942" />
+    <state width="1659" height="363" key="GridCell.Tab.1.left" timestamp="1589355626959">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1659" height="363" key="GridCell.Tab.1.left/0.0.1680.1050@0.0.1680.1050" timestamp="1589355626959" />
+    <state width="1659" height="363" key="GridCell.Tab.1.left/0.23.1680.972@0.23.1680.972" timestamp="1589304786941" />
+    <state width="1659" height="363" key="GridCell.Tab.1.right" timestamp="1589355626960">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1659" height="363" key="GridCell.Tab.1.right/0.0.1680.1050@0.0.1680.1050" timestamp="1589355626960" />
+    <state width="1659" height="363" key="GridCell.Tab.1.right/0.23.1680.972@0.23.1680.972" timestamp="1589304786943" />
+    <state x="341" y="135" key="SettingsEditor" timestamp="1589304675911">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="341" y="135" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1589304675911" />
+    <state x="341" y="148" key="SettingsEditor/0.23.1680.972@0.23.1680.972" timestamp="1589294076660" />
+    <state x="490" y="247" width="845" height="538" key="find.popup" timestamp="1589354378517">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="490" y="247" width="845" height="538" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1589354378517" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1589307960940">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1589307960940" />
   </component>
 </project>

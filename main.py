@@ -10,10 +10,11 @@ app.config['SECRET_KEY'] = 'gsolvit'
 
 
 #   Flask中的route()装饰器用于将URL绑定到函数
-#   URL '/ index' 规则绑定到index()函数。 因此，用户访问http：//localhost：5000 / hello URL，index()函数的输出将在浏览器中呈现。
+#   URL '/ index' 规则绑定到index()函数。 用户访问http：//localhost：5000 / index URL，index()函数的输出将在浏览器中呈现。
 @app.route('/index', methods=['GET', 'POST'])
 def index():
     # 通过render_template()函数呈现HTML文件
+    # print("执行了index()")
     return render_template('index.html')
 
 
