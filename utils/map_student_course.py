@@ -7,7 +7,7 @@ def get_map_student():
     result = query(sql)
     map_student_id = 0
     for cur in result:
-        values = list(cur)
+        values = list(cur)  # values就是个二维矩阵，学生姓名--学号
         map_student[map_student_id] = values
         map_student_id = map_student_id + 1
 
@@ -16,19 +16,19 @@ def get_map_student():
     result = query(sql)
     map_course_id = 0
     for cur in result:
-        map_course[map_course_id] = cur[0]
+        map_course[map_course_id] = cur[0]  # 课程名
         map_course_id = map_course_id + 1
 
     for idx in range(len(map_student)):
-        stuNo2MatNo[map_student[idx][1]] = idx
-    return map_student, map_course, stuNo2MatNo
+        stuNo2MatNo[map_student[idx][1]] = idx  # 学号--标号的映射。   map_student[idx][1]是学生的学号，idx是下标（标号）
 
+    return map_student, map_course, stuNo2MatNo # 【姓名-学号】、【课程名】、【学号--标号】
 
+# 获取学生--课程评分二维表
 def get_matrix(map_student):
     matrix = []
-    for i in range(30):
+    for i in range(len(map_student)):
         matrix.append([])
-    for i in range(30):
         stu_no = map_student[i][1]
         #print(stu_no)
         sql="SELECT COMMENT FROM CHOOSE WHERE STU_NO='%s'" % (stu_no)
@@ -38,4 +38,5 @@ def get_matrix(map_student):
             matrix[i].append(int(score[j][0]))
 
     return matrix
+    #   返回二维数组，30个学生对118门课的评分表，30行118列
 

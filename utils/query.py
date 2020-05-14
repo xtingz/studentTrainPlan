@@ -6,24 +6,27 @@ def query(sql):
     功能; 使用sql语句查询数据库中学生选课信息.
     参数: sql(string)
     """
+    # 链接数据库
     db = pymysql.connect(host=config['MYSQL_HOST'],
                          user=config['MYSQL_USERNAME'],
                          port=config['MYSQL_PORT'],
                          password=config['MYSQL_PASSWORD'],
                          db=config['DATABASE_NAME'],
                          charset='utf8')
+    #  获取游标
     cur = db.cursor()
     try:
         cur.execute(sql)
+        # fetchall()返回多个元组，即返回多个记录(rows)
         result = cur.fetchall()
-        db.commit()
+        db.commit() # 事务提交
 
         #print('query success')
 
         # print('query success')
     except:
         # print('query loss')
-        db.rollback()
+        db.rollback() # 事务回滚
     cur.close()
     db.close()
     return result
@@ -52,6 +55,7 @@ def update(sql):
     cur.close()
     db.close()
 
+
 def getPlanTreeJson(stu_id):
     """
     功能: 传入学生stu_id,然后利用stu_id从数据库查询得到该学生选课信息，再转换为计划树所需的json格式
@@ -59,6 +63,7 @@ def getPlanTreeJson(stu_id):
     :return: 学生选课计划树Json数据
     """
     print(stu_id)
+    # FINISHED_CO 已完成课程
     sql = "select FINISHED_CO from EDU_STU_PLAN WHERE STU_NO='%s'" % stu_id
     result = query(sql)
     print(result)
@@ -103,24 +108,25 @@ def getPlanTreeJson(stu_id):
     children11['name'] = '专业选修'
     children11_list = []
     aid = 1
-
+    # ????
     score = [0.0] * 15
 
     add_time_list = []
     for j in range(44):
         add_time_list.append([])
 
+    # co2score[课程号]=评论
     sql="SELECT CO_NO,COMMENT FROM CHOOSE WHERE STU_NO='%s'" % stu_id
     course2score=query(sql)
     co2score = {}
     for cur in course2score:
         co2score[cur[0]] = cur[1]
-
     #print(co2score)
 
     for co in finished_co:
         course_add = {}
         aid_str = str(aid)
+        # 大分支，开始时间，结束时间，选/必修，学分，课程号
         sql = "select CLASSIFICATION, START_TIME, CO_NAME, IS_MUST, CREDITS, CO_NO from education_plan WHERE CO_100='%s'" % aid_str
         co_name = query(sql)
         #print('数据库查询结果')
@@ -131,25 +137,33 @@ def getPlanTreeJson(stu_id):
         add_curse = {}
         add_is = {}
 
-        add_score = float(co_name[0][4])
+        add_score = float(co_name[0][4]) # 学分
 
         if co == '0':
             #print(co_name)
-            add_curse['name'] = co_name[0][2]
-            add_curse['itemStyle'] = {'borderColor': 'red'}
+            add_curse['name'] = co_name[0][2] #课程名
+            add_curse['itemStyle'] = {'borderColor': 'red'} # 红色--未选
             add_curse['value'] = add_score
-            add_curse['score'] = int(co2score[co_name[0][5]])
+            add_curse['score'] = int(co2score[co_name[0][5]]) # 该课程对应的课程评分
 
+            # 判断选修、必修
             if co_name[0][3] == 1:
                 add_is['name'] = '必修'
             else:
                 add_is['name'] = '选修'
 
+            # add_curse = {'name':...'itemStyle':...'value':...'score':...}
+            # add_is_list = [add_curse]
             add_is_list.append(add_curse)
+
+            # add_is = {}
+            # children = []
+            # add_is_list = [add_curse]
             add_is['children'] = add_is_list
             # add_time['name'] = str(co_name[0][1])
             # add_time_list.append(add_is)
             # add_time['children'] = add_time_list
+
         else:
             add_curse['name'] = co_name[0][2]
             add_curse['itemStyle'] = {'borderColor': 'green'}
@@ -167,9 +181,9 @@ def getPlanTreeJson(stu_id):
             # add_time_list.append(add_is)
             # add_time['children'] = add_time_list
 
-        str_co_time = str(co_name[0][1])
+        str_co_time = str(co_name[0][1]) # 开始时间
         if co_name[0][0] == '思想政治理论':
-            if str_co_time[3] == '6':
+            if str_co_time[3] == '6':   # 2016 7 8 9
                 add_time_list[0].append(add_is)
             if str_co_time[3] == '7':
                 add_time_list[1].append(add_is)
@@ -495,9 +509,9 @@ def getPlanTreeJson(stu_id):
 
 def updateDatabase(stu_id, train_plan):
     """
-    功能: 用户在“培养计划”界面点击“提交”按钮后，使用最新“计划树”信息更新数据库
+    功能: 用户在“课程进度”界面点击“提交”按钮后，使用最新“计划树”信息更新数据库
     :param stu_id: 唯一标识学生的id
-    :param train_plan: “培养计划”界面“计划树”数据的json格式
+    :param train_plan: “课程进度”界面“计划树”数据的json格式
     :return: 无
     """
     data = train_plan['children']

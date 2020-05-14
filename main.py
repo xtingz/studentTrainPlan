@@ -193,6 +193,7 @@ def register():
                     return u'密码错误'
 
 
+# 课程论坛
 @app.route('/news_center', methods=['GET', 'POST'])
 def news_center():
     sql = "select * from NEWS WHERE IS_FIRST='0'"
@@ -201,6 +202,7 @@ def news_center():
     return render_template('news_center.html', result=result)
 
 
+# 回复评论
 @app.route('/detail/<question>', methods=['GET', 'POST'])
 def detail(question):
     print(question)
@@ -236,22 +238,29 @@ def detail(question):
         return render_template('detail.html', title=title, result=result)
 
 
+# 课程推荐
 @app.route('/recommed', methods=['GET', 'POST'])
 def recommed():
     return render_template('recommed.html')
 
 
-
+# 获取推荐数据
 @app.route("/getRecommedData", methods=['GET','POST'])
 def getRecommedData():
     stu_no = session.get('stu_id')
+
+    # 从学生表、课程表获取数据，并返回：【姓名-学号】、【课程名】、【学号--标号】
     id2Student, id2Course, stuNo2MatId = map_student_course.get_map_student()
+
+    # 获取学生--课程评分二维表,评分矩阵
     scoreMatrix = map_student_course.get_matrix(id2Student)
+
     """
     函数，recommedCourse：使用SVD进行课程推荐：
     返回:(课程1ID， 课程1评分)
     """
     topNCourse, topNStudent = recommed_module.recommedCoursePerson(scoreMatrix, stuNo2MatId[stu_no], N=20)
+
     """
     将得到的Course与Person装换为前端图标需要的json格式:
      {
@@ -267,11 +276,14 @@ def getRecommedData():
     """
 
     id2Student = {i:id2Student[i][0] for i in id2Student.keys()}
+
     print(id2Student)
     print(id2Course)
+
     courseJson = recommed_module.toBarJson(topNCourse, id2Course)
     personJson = recommed_module.toBarJson(topNStudent, id2Student)
-    courseJson = recommed_module.regularData(courseJson, 1, 5)
+
+    courseJson = recommed_module.regularData(courseJson, 1, 5)  # 将列表的值归一化到a、b之间
     personJson = recommed_module.regularData(personJson, 0, 1)
 
     coursePersonJson = {}
@@ -294,6 +306,7 @@ def personal_information():
     return render_template('personal_information.html', result=result)
 
 
+# 课程进度
 @app.route('/train_plan', methods=['GET', 'POST'])
 def train_plan():
     return render_template('train_plan.html')
@@ -302,7 +315,7 @@ def train_plan():
 @app.route('/get_info', methods=['GET', 'POST'])
 def get_info():
     """
-    功能(培养计划界面): 初始进入培养计划界面，根据stu_id从数据库中得到数据并将其转换为计划树所需json格式数据
+    功能: 初始进入课程进度界面，根据stu_id从数据库中得到数据 并将其转换为计划树所需json格式数据
     :return: planTree:(json) 计划树所需数据
     """
     stu_id = session.get('stu_id')
@@ -310,15 +323,16 @@ def get_info():
     print(planTree)
     return jsonify(planTree)
 
-
+# 提交选课
 @app.route('/submit_train_plan', methods=['GET', 'POST'])
-def submit_train_p实现lace():
+def submit_train_place():
     """
     功能1：数据库学生选课信息的更新
     功能2: 实现计划树以及进度条的提交更新。
     :return:
     """
     """功能1："""
+    # 使用 request.get_json(force=True) 忽略mimetype
     twoData = request.get_json(force=True)
     train_plan = twoData['tree']
     scores = twoData['scores']
@@ -328,6 +342,7 @@ def submit_train_p实现lace():
     print(train_plan)
     data = train_plan['children']
     array_finish = [0]*120
+
     #print(array_finish)
     for data_children in data:
         data_children = data_children['children']
